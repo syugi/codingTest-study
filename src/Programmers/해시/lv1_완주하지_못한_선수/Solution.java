@@ -1,4 +1,4 @@
-package Programmers.해시.완주하지_못한_선수;
+package Programmers.해시.lv1_완주하지_못한_선수;
 
 import java.util.HashMap;
 

@@ -1,7 +1,6 @@
-package Programmers.해시.전화번호_목록;
+package Programmers.해시.lv2_전화번호_목록;
 
 import java.util.Arrays;
-import java.util.HashMap;
 
 /*
     코딩테스트연습 > 해시 > 전화번호 목록
