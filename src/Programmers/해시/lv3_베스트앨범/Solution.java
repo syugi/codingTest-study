@@ -1,8 +1,6 @@
 package Programmers.해시.lv3_베스트앨범;
 
-import java.sql.Array;
 import java.util.*;
-import java.util.Map.Entry;
 
 /*
     코딩테스트연습 > 해시 > 베스트앨범
