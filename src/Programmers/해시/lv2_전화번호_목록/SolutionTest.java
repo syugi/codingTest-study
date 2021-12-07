@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class SolutionTest {
     @Test
-    @DisplayName("테스트케이스1")
+    @DisplayName("전화번호목록-테스트케이스1")
     public void solutionTest1() {
         Solution s = new Solution();
 
@@ -20,7 +20,7 @@ class SolutionTest {
     }
 
     @Test
-    @DisplayName("테스트케이스2")
+    @DisplayName("전화번호목록-테스트케이스2")
     public void solutionTest2() {
         Solution s = new Solution();
         String[] phone_book = new String[]{"123","456","789"};
@@ -31,7 +31,7 @@ class SolutionTest {
     }
 
     @Test
-    @DisplayName("테스트케이스3")
+    @DisplayName("전화번호목록-테스트케이스3")
     public void solutionTest3() {
         Solution s = new Solution();
 

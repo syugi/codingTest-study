@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SolutionTest {
     @Test
-    @DisplayName("테스트케이스1")
+    @DisplayName("위장-테스트케이스1")
     public void solutionTest1() {
         Solution s = new Solution();
 
@@ -19,7 +19,7 @@ class SolutionTest {
     }
 
     @Test
-    @DisplayName("테스트케이스2")
+    @DisplayName("위장-테스트케이스2")
     public void solutionTest2() {
         Solution s = new Solution();
         String[][] clothes = new String[][]{{"crowmask", "face"}, {"bluesunglasses", "face"}, {"smoky_makeup", "face"}};
