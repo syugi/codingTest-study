@@ -27,44 +27,31 @@ class Solution {
             genresMap.put(genres[i],genresMap.getOrDefault(genres[i],0)+plays[i]);
         }
 
-        List<Entry<String,Integer>> gen_list = new ArrayList<Entry<String, Integer>>(genresMap.entrySet());
-        Collections.sort(gen_list, new Comparator<Entry<String, Integer>>() {
-            @Override
-            public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-                return o2.getValue().compareTo(o1.getValue());
-            }
-        });
+        ArrayList<String> gen_list = sortByValue(genresMap);
 
         //출력테스트
-      for(Entry<String,Integer> g : gen_list){
-            System.out.println("g = " + g);
-        }
+//        for(Entry<String,Integer> g : gen_list){
+//            System.out.println("g = " + g);
+//        }
 
-        for(Entry<String, Integer> entry : gen_list){
+        for(String gen : gen_list){
             HashMap<Integer, Integer> playMap = new HashMap();
-            String gen = entry.getKey();
             for(int i=0; i<plays.length; i++){
                 if(gen.equals(genres[i])){
                     playMap.put(i,plays[i]);
                 }
             }
 
-            List<Entry<Integer,Integer>> play_list = new ArrayList<Entry<Integer,Integer>>(playMap.entrySet());
-            Collections.sort(play_list, new Comparator<Entry<Integer, Integer>>() {
-                @Override
-                public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
-                    return o2.getValue().compareTo(o1.getValue());
-                }
-            });
+            ArrayList<Integer> play_list = sortByValue(playMap);
 
             //출력테스트
-            for(Entry<Integer,Integer> p : play_list){
-                System.out.println("p = " + p);
-            }
+//            for(Entry<Integer,Integer> p : play_list){
+//                System.out.println("p = " + p);
+//            }
 
-            answerList.add(play_list.get(0).getKey());
+            answerList.add(play_list.get(0));
             if(play_list.size() > 1){
-                answerList.add(play_list.get(1).getKey());
+                answerList.add(play_list.get(1));
             }
         }
 
@@ -74,6 +61,21 @@ class Solution {
         }
 
         return answer;
+    }
+
+    private ArrayList sortByValue(Map map){
+        ArrayList<Object> keyList = new ArrayList();
+        keyList.addAll(map.keySet());
+
+        Collections.sort(keyList, new Comparator<Object>() {
+            public int compare(Object o1, Object o2) {
+                Object v1 = map.get(o1);
+                Object v2 = map.get(o2);
+                return ((Comparable) v2).compareTo(v1);
+            }
+        });
+
+        return keyList;
     }
 
 }
