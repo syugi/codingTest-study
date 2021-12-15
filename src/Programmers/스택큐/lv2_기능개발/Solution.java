@@ -1,7 +1,6 @@
-package Programmers.스택큐.vl2_기능개발;
+package Programmers.스택큐.lv2_기능개발;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Stack;
 

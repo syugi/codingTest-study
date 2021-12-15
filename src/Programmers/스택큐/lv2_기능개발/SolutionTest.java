@@ -1,4 +1,4 @@
-package Programmers.스택큐.vl2_기능개발;
+package Programmers.스택큐.lv2_기능개발;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
