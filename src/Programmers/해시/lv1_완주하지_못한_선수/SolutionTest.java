@@ -16,7 +16,7 @@ class SolutionTest {
 
         String result = s.solution(participant, completion);
 
-        assertEquals(result,"leo");
+        assertEquals("leo",result);
     }
 
     @Test
@@ -29,7 +29,7 @@ class SolutionTest {
 
         String result = s.solution(participant, completion);
 
-        assertEquals(result,"vinko");
+        assertEquals("vinko",result);
     }
 
     @Test
@@ -42,7 +42,7 @@ class SolutionTest {
 
         String result = s.solution(participant, completion);
 
-        assertEquals(result,"mislav");
+        assertEquals("mislav",result);
     }
 
 }

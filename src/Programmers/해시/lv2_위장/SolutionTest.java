@@ -15,7 +15,7 @@ class SolutionTest {
 
         int result = s.solution(clothes);
 
-        assertEquals(result,5);
+        assertEquals(5,result);
     }
 
     @Test
@@ -26,6 +26,6 @@ class SolutionTest {
 
         int result = s.solution(clothes);
 
-        assertEquals(result,3);
+        assertEquals(3,result);
     }
 }

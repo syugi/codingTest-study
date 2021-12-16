@@ -18,7 +18,7 @@ class SolutionTest {
         for(int i : result){
             System.out.println("i : "+i);
         }
-        assertArrayEquals(result,new int[]{4, 1, 3, 0});
+        assertArrayEquals(new int[]{4, 1, 3, 0},result);
     }
 
 }

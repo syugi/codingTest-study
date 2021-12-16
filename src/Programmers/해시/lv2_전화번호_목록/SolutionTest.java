@@ -16,7 +16,7 @@ class SolutionTest {
 
         boolean result = s.solution(phone_book);
 
-        assertEquals(result,false);
+        assertEquals(false,result);
     }
 
     @Test
@@ -27,7 +27,7 @@ class SolutionTest {
 
         boolean result = s.solution(phone_book);
 
-        assertEquals(result,true);
+        assertEquals(true,result);
     }
 
     @Test
@@ -39,7 +39,7 @@ class SolutionTest {
 
         boolean result = s.solution(phone_book);
 
-        assertEquals(result,false);
+        assertEquals(false,result);
     }
 
 }

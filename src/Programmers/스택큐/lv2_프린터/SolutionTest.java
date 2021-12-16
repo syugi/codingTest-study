@@ -17,7 +17,7 @@ class SolutionTest {
 
         int result = s.solution(priorities, location);
 
-        assertEquals(result, 1);
+        assertEquals(1,result);
     }
 
     @Test
@@ -30,6 +30,6 @@ class SolutionTest {
 
         int result = s.solution(priorities, location);
 
-        assertEquals(result, 5);
+        assertEquals(5,result);
     }
 }
