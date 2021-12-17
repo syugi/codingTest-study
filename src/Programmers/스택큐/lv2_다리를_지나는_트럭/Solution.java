@@ -26,49 +26,43 @@ class Solution {
     public class Truck {
         int position;
         int weight;
-        public Truck(int position, int weight){
-            this.position = position;
+        public Truck(int weight){
+            this.position = 0;
             this.weight = weight;
         }
     }
     public int solution(int bridge_length, int weight, int[] truck_weights){
         int answer = 0;
-        Queue<Integer> inBridge = new LinkedList<>();
-        Queue<Integer> waitTruck = new LinkedList<>();
-
+        Queue<Truck> trucks = new LinkedList<>();
 
         for (int t : truck_weights) {
-            waitTruck.add(t);
+            Truck truck = new Truck(t);
+            trucks.add(truck);
         }
 
-        int time = 0;
-        while (!waitTruck.isEmpty()) {
+        while (!trucks.isEmpty()) {
 
-            if(inBridge.size() > bridge_length) {
-                //다리지남
-                inBridge.poll();
-                System.out.println("======== inBridge = " + inBridge + " bridge_length : " + bridge_length);
+            if(trucks.peek().position >= bridge_length){
+                trucks.poll();
             }
 
-            //현재 다리위
             int sum = 0;
-            for (int q : inBridge) {
-                sum += q;
+            for (Truck t : trucks) {
+                if(sum+t.weight <= weight){
+                    t.position++;
+                }else{
+                    break;
+                }
+
+                if (t.position > 0) {
+                    sum += t.weight;
+                }
+
+
             }
 
-            int nextTruck = waitTruck.peek();
-            System.out.println("sum = " + sum+" nextTruck : "+nextTruck+" weight : "+weight);
-            if(sum+nextTruck < weight) {
-                inBridge.add(waitTruck.poll());
-            }
-
-            System.out.println("inBridge = " + inBridge);
-            System.out.println("waitTruck = " + waitTruck);
-
-            time++;
+            answer++;
         }
-        System.out.println("time = " + time);
-        answer = time;
 
         return answer;
     }
