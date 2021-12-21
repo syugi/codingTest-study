@@ -65,7 +65,7 @@ class Solution {
         }
 
         answer = (int)Math.floor(answer/jobs.length);
-
+        System.out.println("answer = " + answer);
         return answer;
     }
 
