@@ -1,10 +1,7 @@
 package Programmers.힙.lv3_디스크_컨트롤러;
 
 import javax.lang.model.element.Element;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /*
     코딩테스트연습 > 힙(Heap) > 디스크 컨트롤러
@@ -25,6 +22,7 @@ class Solution {
             this.procTime = procTime;
         }
 
+
         @Override
         public String toString() {
             return "Job{" +
@@ -39,42 +37,34 @@ class Solution {
 
         Arrays.sort(jobs,(o1,o2) -> o1[0] - o2[0]);
 
+        LinkedList<Job> waitList = new LinkedList<>();
         PriorityQueue<Job> pq = new PriorityQueue<>((o1, o2) -> o1.procTime - o2.procTime);
 
-        int count =0;
+        for(int[] job : jobs){
+            waitList.add(new Job(job[0],job[1]));
+        }
+
+        int count   = 0;
+        int endTime = waitList.peek().startTime;
         while(count < jobs.length){
 
-//            while(!pq.isEmpty()){
-//
-//                Job j = pq.poll();
-//                System.out.println("Job = " +j);
-//
-//                int endTime = j.procTime+time-j.startTime;
-//                sum += endTime;
-//                time += j.procTime;
-//            }
-
+            while(!waitList.isEmpty() && waitList.peek().startTime <= endTime){
+                pq.add(waitList.pollFirst());
+            }
+            System.out.println("pq = " + pq);
+            if(!pq.isEmpty()){
+                Job job = pq.poll();
+                System.out.println("job = " + job);
+                endTime += job.procTime;
+                answer += endTime - job.startTime;
+                count++;
+            }else{
+                endTime++;
+            }
+            System.out.println("count = " + count+" answer : "+answer);
         }
 
-        for(int[] job : jobs){
-            pq.add(new Job(job[0],job[1]));
-        }
-
-        int time = 0;
-        int sum = 0;
-        while(!pq.isEmpty()){
-
-            Job j = pq.poll();
-            System.out.println("Job = " +j);
-
-            int endTime = j.procTime+time-j.startTime;
-            sum += endTime;
-            time += j.procTime;
-        }
-
-        System.out.println("sum = " + sum);
-
-        answer = (int)Math.floor(sum/jobs.length);
+        answer = (int)Math.floor(answer/jobs.length);
 
         return answer;
     }
