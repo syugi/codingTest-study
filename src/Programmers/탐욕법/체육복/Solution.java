@@ -1,9 +1,5 @@
 package Programmers.탐욕법.체육복;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-
 /*
     코딩테스트연습 > 탐욕법(Greedy) > 체육복
     https://programmers.co.kr/learn/courses/30/lessons/42862
