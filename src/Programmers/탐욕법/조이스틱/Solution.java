@@ -25,36 +25,22 @@ class Solution {
 
     public int solution(String name) {
         int answer = 0;
-        final int END = 26;
 
-        int pass = 0;
-        for(int i=0; i<name.length(); i++){
-            char c = name.charAt(i);
-            int num = (int)c - 65;
-            System.out.println("c = " + c+" pos : "+num);
+        int len  = name.length();
+        int minMove = len -1;
+        for(int i=0; i<len; i++){
 
-            if(num == 0){
-                pass++;
-                continue;
-            }else {
-                if(pass > 0){
-                    if(pass > END-i){
-                        answer += END-i;
-                    }else{
-                        answer += pass-1;
-                    }
-                }else{
-                    answer++; //커서이동
-                }
+            answer += Math.min(name.charAt(i) - 'A' , 'Z'-name.charAt(i)+1);
+
+            int next = i+1;
+            while (next < len && name.charAt(next) == 'A') {
+                next++;
             }
 
-            if(END-num < num){
-                answer += END - num;
-            }else{
-                answer += num;
-            }
-
+            minMove = Math.min(minMove, i+len-next+i );
         }
+
+        answer += minMove;
 
         return answer;
     }

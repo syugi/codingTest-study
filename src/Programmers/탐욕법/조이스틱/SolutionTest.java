@@ -53,4 +53,5 @@ class SolutionTest {
 
         assertEquals(25, result);
     }
+
 }
