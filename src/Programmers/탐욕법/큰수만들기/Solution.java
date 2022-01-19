@@ -15,39 +15,23 @@ class Solution {
 
     public String solution(String number, int k) {
 
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
 
-        List<Integer> list = new ArrayList<Integer>();
-        for(int i=0; i<number.length(); i++){
-            list.add(number.charAt(i) - '0');
-        }
-
-        List<Integer> removeIdxs = new ArrayList<Integer>();
-
-        int max = list.get(0);
-        int minIdx = 0;
-        for (int i=1; i<list.size(); i++) {
-            System.out.println("list.get(i-1)= " + list.get(i-1)+" list.get(i) = "+list.get(i));
-            if(list.get(i-1) < list.get(i)){
-                removeIdxs.add(i-1);
+        int index = 0;
+        int max   = 0;
+        for(int i=0; i<number.length()-k; i++){
+            max = 0;
+            for(int j=index; j<=k+i; j++){
+                if(max < number.charAt(j)-'0'){
+                    max = number.charAt(j)-'0';
+                    index = j+1;
+                }
             }
-            if(removeIdxs.size() == k) break;
-        }
-        System.out.println("removeIdxs = " + removeIdxs);
+            answer.append(max);
 
-        for(int i=removeIdxs.size()-1; i>=0; i--){
-            System.out.println("i : "+i+" removeIdxs.get(i) = " + removeIdxs.get(i));
-            int idx = removeIdxs.get(i);
-            list.remove(idx);
-            System.out.println("!! list = " + list);
-        }
-        System.out.println("list = " + list);
-
-        for (int n : list) {
-            answer += String.valueOf(n);
         }
 
-        return answer;
+        return answer.toString();
     }
 
 }
