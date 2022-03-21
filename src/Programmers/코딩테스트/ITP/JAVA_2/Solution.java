@@ -1,4 +1,4 @@
-package Programmers.코딩테스트.INTERPARK.JAVA_2;
+package Programmers.코딩테스트.ITP.JAVA_2;
 
 import java.math.BigInteger;
 

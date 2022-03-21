@@ -1,4 +1,4 @@
-package Programmers.코딩테스트.INTERPARK.JAVA_1;
+package Programmers.코딩테스트.ITP.JAVA_1;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
