@@ -1,4 +1,4 @@
-package Programmers.탐욕법.체육복;
+package Programmers.탐욕법.lv1_체육복;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package Programmers.탐욕법.조이스틱;
+package Programmers.탐욕법.lv2_조이스틱;
 
 /*
     코딩테스트연습 > 탐욕법(Greedy) > 조이스틱

@@ -1,4 +1,4 @@
-package Programmers.탐욕법.조이스틱;
+package Programmers.탐욕법.lv2_조이스틱;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

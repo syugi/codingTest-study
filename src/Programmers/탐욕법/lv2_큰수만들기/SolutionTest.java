@@ -1,4 +1,4 @@
-package Programmers.탐욕법.큰수만들기;
+package Programmers.탐욕법.lv2_큰수만들기;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

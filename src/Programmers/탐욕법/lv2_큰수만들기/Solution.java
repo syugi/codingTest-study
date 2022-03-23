@@ -1,6 +1,4 @@
-package Programmers.탐욕법.큰수만들기;
-
-import java.util.*;
+package Programmers.탐욕법.lv2_큰수만들기;
 
 /*
     코딩테스트연습 > 탐욕법(Greedy) > 큰수만들기
