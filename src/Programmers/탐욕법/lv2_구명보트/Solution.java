@@ -18,7 +18,7 @@ class Solution {
     public int solution(int[] people, int limit) {
         int answer = 0;
 
-        Arrays.sort(people); // 30 50,  50, 70, 80,
+        Arrays.sort(people);
 
         int l = 0 ;
         int r   = people.length-1;
